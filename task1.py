@@ -1,24 +1,11 @@
-def binarySearch(arr, start, end, x):
-    if end >= start:
-        mid = (end + start) // 2
+x = int(input("Enter the height you desire (1 to 8): "))
 
-        if arr[mid] == x:
-            return mid
-        elif arr[mid] > x:
-            return binarySearch(arr, start, mid - 1, x)
-        else:
-            return binarySearch(arr, mid + 1, end, x)
+while x < 1 or x > 8:
+    print("invalid")
+    x = int(input("please make sure you enter a positive integer between 1 to 8: "))
 
-    else:
-        return -1
-
-
-arr = [2, 5, 7, 9, 15, 27, 34, 49, 40, 48, 52, 55]
-x = int(input("Enter the element you want to test its existance: "))
-
-result = binarySearch(arr, 0, len(arr) - 1, x)
-
-if result != -1:
-    print("Elemnt Found")
-else:
-    print("Element not Found")
+if x > 1 and x < 8:
+    for i in range(1, x + 1):
+        spaces = " " * (x - i)
+        hashes = "#" * i
+        print(spaces + hashes + " " + hashes)
